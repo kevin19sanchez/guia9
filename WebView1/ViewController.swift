@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myWebView: UIWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = URL(string: "https://codigofacilito.com")
+        let request = URLRequest(url: url!)
+        
+        myWebView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
